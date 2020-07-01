@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>Fanzone Football</title>
     <link rel="icon" href="img/logo_green.png">
-<script>
-function getMobileOperatingSystem() {
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    <script>
+        function getMobileOperatingSystem() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    if (/android/i.test(userAgent)) {
-        return "Android";
-    }
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        return "iOS";
-    }
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "iOS";
+            }
 
-    return "unknown";
-}</script>
+            return "unknown";
+        }</script>
 
-<script>
-function DetectAndServe(){
-    let os = getMobileOperatingSystem();
-    if (os == "Android") {
-        window.location.href = "https://play.google.com/store/apps/details?id=io.fanzone.fanzone"; 
-    } else if (os == "iOS") {
-        window.location.href = "https://apps.apple.com/se/app/fanzone-football/id1514228249";
-    } else {
-        window.location.href = (window.location.origin+window.location.pathname).replace("/download","/index");
-    }
-}
-</script>
+    <script>
+        function DetectAndServe() {
+            let os = getMobileOperatingSystem();
+            if (os == "Android") {
+                window.location.href = "https://play.google.com/store/apps/details?id=io.fanzone.fanzone";
+            } else if (os == "iOS") {
+                window.location.href = "https://apps.apple.com/se/app/fanzone-football/id1514228249";
+            } else {
+                window.location.href = (window.location.origin + window.location.pathname).replace("/download", "/index");
+            }
+        }
+    </script>
 </head>
+
 <body style="background-color: #458621" onload="DetectAndServe()">
 </body>
+
 </html>
